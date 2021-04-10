@@ -17,3 +17,15 @@ k8s --> Folder contains deployment and service yml files
 
 kubectl apply -f deployment.yml 
 kubectl apply -f service.yml 
+
+Example RestAPI URL:
+
+Health: http://127.0.0.1:<port>/health
+
+Diag: http://127.0.0.1:<port>/diag
+  
+convert: http://127.0.0.1:<port>/convert --> method is POST
+under post Method body send countryname as form-data
+E.g: 
+![image](https://user-images.githubusercontent.com/43188052/114275832-0fbb4a80-99f2-11eb-90fc-52bc5cbd9949.png)
+
