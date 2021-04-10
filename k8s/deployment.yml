@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi-lookup
+  labels:
+    app: lookup
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lookup
+  template:
+    metadata:
+      labels:
+        app: lookup
+    spec:
+      containers:
+        - name: lookup
+          image: saidocker12/lookup:v1.0
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
